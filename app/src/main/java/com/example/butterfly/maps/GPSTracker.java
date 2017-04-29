@@ -81,12 +81,6 @@ public class GPSTracker extends Service implements LocationListener {
         return location;
     }
 
-    public void stopUsingGPS(){
-        if(locationManager != null){
-            locationManager.removeUpdates(GPSTracker.this);
-        }
-    }
-
     public double getLatitude(){
         if(location != null){
             latitude = location.getLatitude();
@@ -100,14 +94,6 @@ public class GPSTracker extends Service implements LocationListener {
         }
 
         return longitude;
-    }
-
-    public double getSpeed(){
-        if(location != null){
-            speed = location.getSpeed();
-        }
-
-        return speed;
     }
 
     public boolean canGetLocation() {
